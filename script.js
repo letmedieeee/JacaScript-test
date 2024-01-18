@@ -66,7 +66,25 @@ function checkAnswers() {
 
 function displayResult() {
 	const resultSection = document.getElementById('resultSection')
+	let ocena = ''
+
+	switch (result) {
+		case 0:
+			ocena = 'niema odpowiedzi'
+			break
+		case 1:
+			ocena = 'niedostateczna'
+			break
+		case 2:
+			ocena = 'dostateczna'
+			break
+		default:
+			ocena = 'bardzo dobra'
+			break
+	}
+
 	resultSection.style.display = 'block'
-	resultSection.innerHTML = `<h3>wynik dla ${firstName}:</h3>`
+	resultSection.innerHTML += `<h3>wynik dla ${firstName}:</h3>`
+	resultSection.innerHTML += `<h3>twoja ocena: ${ocena}:</h3>`
 	resultSection.innerHTML += `<p>Prawidłowe odpowiedzi: ${result} z ${questions.length}</p>`
 }
