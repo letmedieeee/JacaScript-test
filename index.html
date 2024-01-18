@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>test dla ZSM nr3</title>
+	</head>
+	<body>
+		<script src="script.js"></script>
+		<div class="myDiv">
+			<img src="js.png" alt="JavaScript" width="130" height="100" />
+			<h2>To jest prosty test z JavaScript</h2>
+			<p>Wpisz swoje imie, nazwisko i klase</p>
+			<form onsubmit="startQuiz(); return false;">
+				<label for="firstName">imie: </label>
+				<input type="text" name="firstName" id="firstName" required />
+				<label for="lastName">Nazwisko: </label>
+				<input type="text" name="lastName" id="lastName" required />
+				<label for="className">Klasa: </label>
+				<input type="text" name="className" id="className" required />
+				<button type="submit">Potwerdz</button>
+			</form>
+		</div>
+
+		<div id="quizSection" style="display: none">
+			<form onsubmit="checkAnswers(); return false;">
+				<div id="questionsContainer"></div>
+				<button type="submit">Sprawdź odpowiedzi</button>
+			</form>
+		</div>
+
+		<div id="resultSection" style="display: none"></div>
+	</body>
+</html>
