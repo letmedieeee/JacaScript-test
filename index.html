@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" type="text/css" href="style.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>test dla ZSM nr3</title>
+		<link rel="stylesheet" href="style.css">
 	</head>
-	<body>
-		<script src="script.js"></script>
-		<div class="myDiv">
-			<img src="js.png" alt="JavaScript" width="130" height="100" />
-			<h2>To jest prosty test z JavaScript</h2>
-			<p>Wpisz swoje imie, nazwisko i klase</p>
-			<form onsubmit="startQuiz(); return false;">
-				<label for="firstName">imie: </label>
-				<input type="text" name="firstName" id="firstName" required />
-				<label for="lastName">Nazwisko: </label>
-				<input type="text" name="lastName" id="lastName" required />
-				<label for="className">Klasa: </label>
-				<input type="text" name="className" id="className" required />
-				<br />
-				<button type="submit">Potwerdz</button>
-			</form>
-		</div>
+      <div class="myDiv">
+        <img src="js.png" alt="JavaScript" width="130" height="100" />
+        <h2>To jest prosty test z JavaScript</h2>
+        <p>Wpisz swoje imie, nazwisko i klase</p>
+        <form onsubmit="startQuizAndTimer(); return false;">
+            <label for="firstName">imie: </label>
+            <input type="text" name="firstName" id="firstName" required />
+            <label for="lastName">Nazwisko: </label>
+            <input type="text" name="lastName" id="lastName" required />
+            <label for="className">Klasa: </label>
+            <input type="text" name="className" id="className" required />
+            <br />
+            <button type="submit">Potwierdz</button>
+        </form>
+    </div>
 
-		<div id="quizSection" style="display: none">
-			<form onsubmit="checkAnswers(); return false;">
-				<div id="questionsContainer"></div>
-				<button type="submit">Sprawdź odpowiedzi</button>
-			</form>
-		</div>
+    <div id="quizSection" style="display: none">
+		<button class="button" onclick="autoSubmitQuiz()">Auto Submit Quiz</button>
+        <form onsubmit="checkAnswersAndStopTimer(); return false;">
+            <div id="questionsContainer"></div>
+            <button type="submit">Sprawdź odpowiedzi</button>
+        </form>
+    </div>
+    <div id="resultSection" style="display: none">
+		<button class="button" onclick="restartQuiz()">Restart Quiz</button>
+	</div>
 
-		<div id="resultSection" style="display: none"></div>
-	</body>
+    <div id="canvasBox" style="position: fixed; bottom: 10px; right: 10px;">
+        <canvas id="myCanvas" width="120" height="120" style="border: 1px solid #000000;">
+            Your browser doesn't support the HTML5 canvas tag.
+        </canvas>
+		
+    </div>
+
+<script src="script.js"></script>
 </html>
